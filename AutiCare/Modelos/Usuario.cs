@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AutiCare
+namespace AutiCare.Modelos
 {
     public class Usuario
     {
