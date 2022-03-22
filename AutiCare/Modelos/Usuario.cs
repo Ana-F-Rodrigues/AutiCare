@@ -10,13 +10,6 @@ namespace AutiCare.Modelos
 
         public DateTime DataNascimento { get; set; }
 
-        public enum Sexo
-        {
-              masculino,
-              feminino,
-              
-        
-        }
-
+        public SexoEnum Sexo { get; set; }
     }
 }
