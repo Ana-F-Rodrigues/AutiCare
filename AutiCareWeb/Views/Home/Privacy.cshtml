@@ -3,7 +3,9 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-
+<div class="row">
+     <div class="col-md-4">
+         <form asp-action="CriarUsuario">
 <div><label>Idade: <input type="text" id="Idade" name="Idade" /></label></div>
 
 <div> Sexo: <select name="sexo" id="sexo">
@@ -85,6 +87,10 @@
         <option value="N">NÃO</option>
         </select>
 </div>
-
-
+<div class="form-group">
+                <input type="submit" value="GERAR DIAGNOSTICO" class="btn btn-primary" />
+            </div>
+ </form>
+ </div>
+</div>
 
