@@ -14,6 +14,36 @@ namespace AutiCare.Modelos
         public bool Pergunta_8 { get; set; }
         public bool Pergunta_9 { get; set; }
         public bool Pergunta_10 { get; set; }
+
+        public bool Diagnostico()
+        {
+            short verdadeiras = 0;
+
+            if (Pergunta_1)
+                verdadeiras++;
+            if (Pergunta_2)
+                verdadeiras++;
+            if (Pergunta_3)
+                verdadeiras++;
+            if (Pergunta_4)
+                verdadeiras++;
+            if (Pergunta_5)
+                verdadeiras++;
+            if (Pergunta_6)
+                verdadeiras++;
+            if (Pergunta_7)
+                verdadeiras++;
+            if (Pergunta_8)
+                verdadeiras++;
+            if (Pergunta_9)
+                verdadeiras++;
+            if (Pergunta_10)
+                verdadeiras++;
+
+            return verdadeiras >= 7 ? true : false;
+        }
+
+
     }
 }
  
