@@ -1,11 +1,9 @@
-﻿using AutiCareWeb.Models;
+﻿using AutiCare.Modelos;
+using AutiCareWeb.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AutiCareWeb.Controllers
 {
@@ -20,7 +18,20 @@ namespace AutiCareWeb.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Usuario usuario = new Usuario();
+
+            return View(usuario);
+        }
+
+        [HttpPost]
+        public IActionResult CriarUsuario(Usuario usuario)
+        {
+            if (!ModelState.IsValid)
+                return RedirectToAction(nameof(Index), usuario);
+
+            //Gravar no banco
+
+            return RedirectToAction(nameof(Privacy));
         }
 
         public IActionResult Privacy()

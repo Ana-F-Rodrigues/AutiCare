@@ -1,6 +1,6 @@
 ﻿namespace AutiCare.Modelos
 {
-    public enum SexoEnum { Masculino, Feminino }
+    public enum SexoEnum { Masculino, Feminino, Outro }
 
   
 }
