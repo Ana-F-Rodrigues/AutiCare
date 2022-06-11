@@ -14,9 +14,8 @@
 
         public UsuarioEnum User { get; set; }
 
-        public EstadosEnum Estados { get; set; }
+       
 
-        public bool UsouTriagem { get; set; }
 
 
 
