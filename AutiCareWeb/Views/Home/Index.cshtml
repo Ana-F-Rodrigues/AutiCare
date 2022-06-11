@@ -6,18 +6,32 @@
     <h1 class="display-4">AutiCare</h1>
 </div>
 
-<div><label>Nome: <input type="text" id="Nome" name="Nome" /></label></div>
-<div><label>Data de Nascimento: <input type="text" id="DataNascimento" name="DataNascimento" /></label></div>
-<div>
+<hr/>
 
-    Sexo:
-    <select name="sexo" id="sexo">
-        <option value="feminino">F</option>
-        <option value="masculino">M</option>
-        <option value="nao">Não quero informar</option>
-
-    </select>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CriarUsuario">
+            <div class="form-group">
+                <label class="control-label">Nome:</label>
+                <input class="form-control" type="text" id="Nome" name="Nome" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data de Nascimento:</label>
+                <input class="form-control" type="text" id="DataNascimento" name="DataNascimento" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Sexo:</label>
+                <select class="form-control" name="sexo" id="sexo">
+                    <option value="feminino">F</option>
+                    <option value="masculino">M</option>
+                    <option value="nao">Não quero informar</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar Usuário" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
 </div>
-
 
 
