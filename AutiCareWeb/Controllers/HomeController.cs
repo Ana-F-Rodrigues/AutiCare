@@ -31,10 +31,10 @@ namespace AutiCareWeb.Controllers
 
             //Gravar no banco
 
-            return RedirectToAction(nameof(Privacy));
+            return RedirectToAction(nameof(Diagnostico));
         }
 
-        public IActionResult Privacy()
+        public IActionResult Diagnostico()
         {
             return View();
         }
