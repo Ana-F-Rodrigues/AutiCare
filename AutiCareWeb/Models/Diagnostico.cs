@@ -2,8 +2,20 @@
 
 namespace AutiCare.Modelos
 {
-    public class RespostasUsuarios
+    public class Diagnostico
     {
+        public short Idade { get; set; }
+
+        public SexoEnum Sexo { get; set; }
+
+        public EtniaEnum Etnia { get; set; }
+
+        public bool Ictericia { get; set; }
+
+        public bool FamiliarPDD { get; set; }
+
+        public UsuarioEnum User { get; set; }
+
         public bool Pergunta_1 { get; set; }
         public bool Pergunta_2 { get; set; }
         public bool Pergunta_3 { get; set; }
@@ -15,7 +27,7 @@ namespace AutiCare.Modelos
         public bool Pergunta_9 { get; set; }
         public bool Pergunta_10 { get; set; }
 
-        public bool Diagnostico()
+        public bool DiagnosticoFinal()
         {
             short verdadeiras = 0;
 
