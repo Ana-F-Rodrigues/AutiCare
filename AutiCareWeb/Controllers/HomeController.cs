@@ -1,4 +1,4 @@
-﻿using AutiCare.Modelos;
+﻿using AutiCare.Models;
 using AutiCareWeb.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -36,7 +36,13 @@ namespace AutiCareWeb.Controllers
 
         public IActionResult Diagnostico()
         {
-            return View();
+            Diagnostico diagnostico = new Diagnostico();
+            return View(diagnostico);
+        }
+        [HttpPost]
+        public IActionResult Diagnostico(Diagnostico diagnostico)
+        {
+            return null;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

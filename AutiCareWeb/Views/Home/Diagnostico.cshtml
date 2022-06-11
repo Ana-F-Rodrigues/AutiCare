@@ -1,11 +1,13 @@
-﻿@{
+﻿@model AutiCare.Models.Diagnostico
+
+@{
     ViewData["Title"] = "Sobre o Paciente";
 }
 <h1>@ViewData["Title"]</h1>
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CriarUsuario">
+        <form asp-action="Diagnostico">
             <div><label>Idade: <input type="text" id="Idade" name="Idade" /></label></div>
 
             <div>

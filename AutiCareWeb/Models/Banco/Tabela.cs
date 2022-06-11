@@ -1,9 +1,6 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace AutiCare.Models
+﻿namespace AutiCareWeb.Models.Banco
 {
-    public class Usuario
+    public class Tabela
     {
         [Key]
         public int ID { get; set; }
