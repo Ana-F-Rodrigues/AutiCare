@@ -8,102 +8,134 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Diagnostico">
-            <div><label>Idade: <input type="text" id="Idade" name="Idade" /></label></div>
+            <div class="form-group">
+                <label class="control-label">Idade:</label>
+                <input class="form-control" type="text" asp-for="Idade" />
+            </div>
 
-            <div>
-                Sexo: <select name="sexo" id="sexo">
-                    <option value="feminino">F</option>
-                    <option value="masculino">M</option>
-                </select>
-            </div>
-            <div>
-                Etnia: <select name="etnia" id="etnia">
-                    <option value="branco">branco</option>
-                    <option value="negro">negro</option>
-                    <option value="indigena">indigena</option>
-                    <option value="pardo">pardo</option>
-                </select>
-            </div>
-            <div>
-                Ictericia: <select name="ictericia" id="ictericia">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
-                </select>
-            </div>
-            <div>
-                Familiar PDD?: <select name="familia" id="familia">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
-                </select>
-            </div>
-            <div>
-                Quem é voce?: <select name="user" id="user">
-                    <option value="mae">MÃE</option>
-                    <option value="pai">PAI</option>
-                    <option value="pai">MEDICO</option>
+            <div class="form-group">
+                <label class="control-label">Sexo:</label>
+                <select class="form-control" name="Sexo" id="Sexo">
+                    <option value="0">F</option>
+                    <option value="1">M</option>
                 </select>
             </div>
 
-            <div>
-                Seu filho olha pra vc quando chama o nome dele?: <select name="pergunta_1" id="pergunta_1">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
+            <div class="form-group">
+                <label class="control-label">Etnia:</label>
+                <select class="form-control" name="Etnia" id="Etnia">
+                    <option value="0">Branco</option>
+                    <option value="1">Negro</option>
+                    <option value="2">Indígena</option>
+                    <option value="3">Pardo</option>
                 </select>
             </div>
-            <div>
-                É fácil manter contato visual ?: <select name="pergunta_2" id="pergunta_2">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
+
+            <div class="form-group">
+                <label class="control-label">Ictericia:</label>
+                <select class="form-control" name="Ictericia" id="Ictericia">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
                 </select>
             </div>
-            <div>
-                Quando a criança quer algo, costuma apontar com o dedo?: <select name="pergunta_3" id="pergunta_3">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
+
+            <div class="form-group">
+                <label class="control-label">Familiar PDD?:</label>
+                <select class="form-control" name="Familia" id="Familia">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
                 </select>
             </div>
-            <div>
-                Compartilha interesses com vc? Ex: apontando para um brinquedo que achou legal: <select name="pergunta_4" id="pergunta_4">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
+
+            <div class="form-group">
+                <label class="control-label">Quem é voce?:</label>
+                <select class="form-control" name="User" id="User">
+                    <option value="0">MÃE</option>
+                    <option value="1">PAI</option>
+                    <option value="2">MEDICO</option>
                 </select>
             </div>
-            <div>
-                A criança costuma fingir? Ex: fingir que esta brincando com o telefone ou fingir que é medico na brincadeira. <select name="pergunta_5" id="pergunta_5">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
+
+            <div class="form-group">
+                <label class="control-label">Seu filho olha pra vc quando chama o nome dele?:</label>
+                <select class="form-control" name="Pergunta_1" id="Pergunta_1">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
                 </select>
             </div>
-            <div>
-                Quando vc olha para alguma coisa, a criança acompanha seu olhar? <select name="pergunta_6" id="pergunta_6">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
+
+            <div class="form-group">
+                <label class="control-label">É fácil manter contato visual?:</label>
+                <select class="form-control" name="Pergunta_2" id="Pergunta_2">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
                 </select>
             </div>
-            <div>
-                Se você esta triste a criança costuma lhe confortar? Ex: Te abraçar. <select name="pergunta_7" id="pergunta_7">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
+
+            <div class="form-group">
+                <label class="control-label">Quando a criança quer algo, costuma apontar com o dedo?:</label>
+                <select class="form-control" name="Pergunta_3" id="Pergunta_3">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
                 </select>
             </div>
-            <div>
-                A criança usa gestos simples: Ex: Acenar para dar tchau. <select name="pergunta_8" id="pergunta_8">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
+
+            <div class="form-group">
+                <label class="control-label">Compartilha interesses com vc? Ex: apontando para um brinquedo que achou legal:</label>
+                <select class="form-control" name="Pergunta_4" id="Pergunta_4">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
                 </select>
             </div>
-            <div>
-                A criança fica muito distraída? <select name="pergunta_9" id="pergunta_9">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
+
+            <div class="form-group">
+                <label class="control-label">A criança costuma fingir? Ex: fingir que esta brincando com o telefone ou fingir que é medico na brincadeira.</label>
+                <select class="form-control" name="Pergunta_5" id="Pergunta_5">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
                 </select>
             </div>
-            <div>
-                A criança costuma falar frases que vc considera incomum? <select name="pergunta_10" id="pergunta_10">
-                    <option value="S">SIM</option>
-                    <option value="N">NÃO</option>
+
+            <div class="form-group">
+                <label class="control-label">Quando vc olha para alguma coisa, a criança acompanha seu olhar?</label>
+                <select class="form-control" name="Pergunta_6" id="Pergunta_6">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
                 </select>
             </div>
+
+            <div class="form-group">
+                <label class="control-label">Se você esta triste a criança costuma lhe confortar? Ex: Te abraçar.</label>
+                <select class="form-control" name="Pergunta_7" id="Pergunta_7">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">A criança usa gestos simples: Ex: Acenar para dar tchau.</label>
+                <select class="form-control" name="Pergunta_8" id="Pergunta_8">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">A criança fica muito distraída?</label>
+                <select class="form-control" name="Pergunta_9" id="Pergunta_9">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">A criança costuma falar frases que vc considera incomum?</label>
+                <select class="form-control" name="Pergunta_10" id="Pergunta_10">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="GERAR DIAGNOSTICO" class="btn btn-primary" />
             </div>

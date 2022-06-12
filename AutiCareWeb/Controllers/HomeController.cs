@@ -24,7 +24,7 @@ namespace AutiCareWeb.Controllers
         }
 
         [HttpPost]
-        public IActionResult CriarUsuario(Usuario usuario)
+        public IActionResult Index(Usuario usuario)
         {
             if (!ModelState.IsValid)
                 return RedirectToAction(nameof(Index), usuario);
