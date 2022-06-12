@@ -1,5 +1,6 @@
 ﻿using AutiCare.Models;
 using AutiCareWeb.Models;
+using AutiCareWeb.Models.Banco;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -11,6 +12,7 @@ namespace AutiCareWeb.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        //Receber aqui a instância do DbContext
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -29,7 +31,7 @@ namespace AutiCareWeb.Controllers
             if (!ModelState.IsValid)
                 return RedirectToAction(nameof(Index), usuario);
 
-            //Gravar no banco
+            GerenciadorRespostas.AdicionarRespostasUsuario(usuario);
 
             return RedirectToAction(nameof(Diagnostico));
         }
@@ -42,6 +44,11 @@ namespace AutiCareWeb.Controllers
         [HttpPost]
         public IActionResult Diagnostico(Diagnostico diagnostico)
         {
+            GerenciadorRespostas.AdicionarRespostasDiagnostico(diagnostico);
+
+            //gravar no BD
+            //GerenciadorRespostas.DevolverTabelaDiagnosticoPreenchido();
+
             return null;
         }
 

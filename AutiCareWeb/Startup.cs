@@ -1,3 +1,4 @@
+using AutiCareWeb.Models.Banco;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +25,10 @@ namespace AutiCareWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //Colocar aqui a Injeção de Dependência do DbContext
+            //services.AddDbContext<AutiCareDbContext>(options
+            //    => options.UseSqlServer(<<CONNECTIONSTRING>>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
