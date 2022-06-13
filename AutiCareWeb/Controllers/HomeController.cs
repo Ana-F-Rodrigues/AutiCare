@@ -52,8 +52,8 @@ namespace AutiCareWeb.Controllers
 
             //gravar no BD
             var tableDiagnostico = GerenciadorRespostas.DevolverTabelaDiagnosticoPreenchido();
-           // _dbContext.TableDiagnostico.Add(tableDiagnostico);
-           // _dbContext.SaveChanges();
+            _dbContext.TableDiagnostico.Add(tableDiagnostico);
+            _dbContext.SaveChanges();
 
             var resultado = diagnostico.DiagnosticoFinal();
 
