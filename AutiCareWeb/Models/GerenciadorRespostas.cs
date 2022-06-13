@@ -9,6 +9,7 @@ namespace AutiCareWeb.Models
 
         public static void AdicionarRespostasUsuario(Usuario usuario)
         {
+            TableDiagnostico.ID = null;
             TableDiagnostico.Nome = usuario.Nome;
             TableDiagnostico.Sexo = (short)usuario.Sexo;
             TableDiagnostico.DataNascimento = usuario.DataNascimento;

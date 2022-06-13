@@ -44,9 +44,12 @@ namespace AutiCareWeb.Controllers
             Diagnostico diagnostico = new Diagnostico();
             return View(diagnostico);
         }
+
         [HttpPost]
         public IActionResult Diagnostico(Diagnostico diagnostico)
         {
+            GerenciadorRespostas.AdicionarRespostasDiagnostico(diagnostico);
+
             //gravar no BD
             var tableDiagnostico = GerenciadorRespostas.DevolverTabelaDiagnosticoPreenchido();
             _dbContext.TableDiagnostico.Add(tableDiagnostico);
