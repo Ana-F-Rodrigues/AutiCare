@@ -2,6 +2,7 @@ using AutiCareWeb.Models.Banco;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,8 +28,8 @@ namespace AutiCareWeb
             services.AddControllersWithViews();
 
             //Colocar aqui a Injeção de Dependência do DbContext
-            //services.AddDbContext<AutiCareDbContext>(options
-            //    => options.UseSqlServer(<<CONNECTIONSTRING>>));
+            services.AddDbContext<AutiCareDbContext>(options
+               => options.UseSqlServer(" Data Source = DESKTOP - 5V8RAKR; Initial Catalog = AUTICARE; Integrated Security = True "));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
