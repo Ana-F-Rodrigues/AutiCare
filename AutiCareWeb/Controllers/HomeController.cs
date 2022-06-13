@@ -11,8 +11,15 @@ namespace AutiCareWeb.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AutiCareDbContext _dbContext;
 
         //Receber aqui a instância do DbContext
+        public HomeController(ILogger<HomeController> logger,
+            AutiCareDbContext dbContext)
+        {
+            _logger = logger;
+            _dbContext = dbContext;
+        }
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -44,12 +51,21 @@ namespace AutiCareWeb.Controllers
         [HttpPost]
         public IActionResult Diagnostico(Diagnostico diagnostico)
         {
-            GerenciadorRespostas.AdicionarRespostasDiagnostico(diagnostico);
-
             //gravar no BD
-            //GerenciadorRespostas.DevolverTabelaDiagnosticoPreenchido();
+            var tableDiagnostico = GerenciadorRespostas.DevolverTabelaDiagnosticoPreenchido();
+            _dbContext.TableDiagnostico.Add(tableDiagnostico);
+            _dbContext.SaveChanges();
 
-            return null;
+            var resultado = diagnostico.DiagnosticoFinal();
+
+            return RedirectToAction(nameof(ResultadoDiagnostico), resultado);
+        }
+
+        public IActionResult ResultadoDiagnostico(bool resultado)
+        {
+            ViewData["Resultado"] = $"O resultado foi: {resultado}";
+
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
