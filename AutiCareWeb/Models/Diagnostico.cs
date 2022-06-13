@@ -14,7 +14,7 @@ namespace AutiCare.Models
 
         public bool FamiliarPDD { get; set; }
 
-        public UsuarioEnum User { get; set; }
+        public UsuarioEnum TipoUser { get; set; }
 
         public bool Pergunta_1 { get; set; }
         public bool Pergunta_2 { get; set; }
