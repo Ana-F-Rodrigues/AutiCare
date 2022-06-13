@@ -52,17 +52,17 @@ namespace AutiCareWeb.Controllers
 
             //gravar no BD
             var tableDiagnostico = GerenciadorRespostas.DevolverTabelaDiagnosticoPreenchido();
-            _dbContext.TableDiagnostico.Add(tableDiagnostico);
-            _dbContext.SaveChanges();
+           // _dbContext.TableDiagnostico.Add(tableDiagnostico);
+           // _dbContext.SaveChanges();
 
             var resultado = diagnostico.DiagnosticoFinal();
 
-            return RedirectToAction(nameof(ResultadoDiagnostico), resultado);
+            return RedirectToAction(nameof(ResultadoDiagnostico), new { valorResultado = resultado } );
         }
 
-        public IActionResult ResultadoDiagnostico(bool resultado)
+        public IActionResult ResultadoDiagnostico(bool valorResultado)
         {
-            ViewData["Resultado"] = $"O resultado foi: {resultado}";
+            ViewData["Resultado"] = $"O resultado foi: {valorResultado}";
 
             return View();
         }
