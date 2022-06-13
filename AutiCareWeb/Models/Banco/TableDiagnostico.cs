@@ -1,5 +1,4 @@
-﻿using AutiCare.Models;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace AutiCareWeb.Models.Banco
@@ -7,7 +6,7 @@ namespace AutiCareWeb.Models.Banco
     public class TableDiagnostico
     {
         [Key]
-        public int ID { get; set; }
+        public int? ID { get; set; } = null;
 
         [Required]
         public string Nome { get; set; }
