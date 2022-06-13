@@ -20,10 +20,6 @@ namespace AutiCareWeb.Controllers
             _logger = logger;
             _dbContext = dbContext;
         }
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
         public IActionResult Index()
         {

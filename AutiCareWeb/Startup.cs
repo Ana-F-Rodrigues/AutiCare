@@ -29,7 +29,7 @@ namespace AutiCareWeb
 
             //Colocar aqui a Injeção de Dependência do DbContext
             services.AddDbContext<AutiCareDbContext>(options
-               => options.UseSqlServer(" Data Source = DESKTOP - 5V8RAKR; Initial Catalog = AUTICARE; Integrated Security = True "));
+               => options.UseSqlServer("Data Source=DESKTOP-5V8RAKR; Initial Catalog=AUTICARE; Integrated Security=True"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
